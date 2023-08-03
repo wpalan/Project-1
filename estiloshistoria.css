@@ -1,0 +1,44 @@
+.cont1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cont2 {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.titulos {
+    color:  #678983;
+    font-family: 'VT323', monospace;
+    font-size: xx-large;
+    margin: 45px;
+}
+
+.infotxt {
+    color: #E6DDC4;
+    font-size: small;
+    margin: 45px;
+}
+
+
+.caja {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.contvideo {
+    display: flex;
+    flex-direction: column;
+    width: 100vh;
+    background-color: black;
+}
+
+.barrarep{
+    padding: 10px;
+    background-color: rgb(24, 24, 24);
+    border-radius: 20px;
+}

@@ -1,0 +1,33 @@
+
+.img {
+    width: 300px;
+    height: 180px;
+}
+
+p {
+    text-align: center;
+}
+
+.box1 {
+    background-color: #181D31;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.card {
+    display: inline-flex;
+    background-color: #E6DDC4;
+    padding-bottom: 5px;
+    box-shadow: 2px 2px 2px 1px rgb(103, 137, 131);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 150px;
+}
+
+.txtlink {
+    display: flex;
+    text-align: center;
+    font-size: small;
+}
