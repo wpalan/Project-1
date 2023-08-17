@@ -1,50 +1,47 @@
-const imagen=document.querySelectorAll('.caja');
+var dropZones = document.querySelectorAll('.dropZone');
+dropZones.forEach((dropZone) => {
+    dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        console.log("Mouse Entro")
+        dropZone.style.backgroundColor = 'blue'
+    });
+    
+    dropZone.addEventListener('dragleave', () => {
+        console.log("Mouse Salio")
+        dropZone.style.backgroundColor = 'grey'
+    });  
 
-imagen.addEventListener('dragstart', dragStart);
+    dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
 
-function dragStart() {
-    e.dataTransfer.setData('Text', e.target.id);
-    e.target.classList.add('hide');
-};
+        var draggedElementId = e.dataTransfer.getData('text/plain');
+        var draggedElement = document.getElementById(draggedElementId);
+        console.log('El elemento arrastrado es:', draggedElement);
+        draggedElement.remove()
 
-const cajas = document.querySelectorAll('.cajagris');
+        
+        var files = e.dataTransfer.files;
+        if (files.length > 0) {
+            console.log(files.length + " Archivos cargados")
+            console.log(files)
+            var file = files[0];
+            var reader = new FileReader();
 
-cajas.forEach(caja =>{
-    caja.addEventListener('dragenter', dragEnter);
-    caja.addEventListener('dragover', dragOver);
-    caja.addEventListener('dragleave', dragLeave);
-    caja.addEventListener('drop', drop);
+            reader.onload = (e) => {
+                dropZone.style.backgroundImage = 'url(' + e.target.result + ')'
+                dropZone.style.backgroundSize = 'cover'
+                dropZone.style.backgroundPosition = 'center'
+            };
+            
+            reader.readAsDataURL(file)
+        }
+    })
+})
+
+var images = document.querySelectorAll('img[draggable="true"]');
+images.forEach((img) => {
+    img.addEventListener('dragstart', (e) => {
+        e.dataTransfer.setData('text/plain', e.target.id);
+        console.log(e.target.id)
+    });
 });
-
-function dragEnter(e) {
-    e.preventDefault();
-    e.tartget.classList.add('drag-over');
-    
-};
-
-function dragOver(e){
-    e.preventDefault();
-    e.target.classList.add('drag-over');
-};
-
-function dragLeave(e) {
-    e.target.classList.remove('drag-over');
-};
-
-function drop(e) {
-    e.target.classList.remove('drag-over');
-
-
-    const id = e.dataTransfer.getData('Text');
-    
-    const draggable = document.querySelectorAll('.caja');
-
-    e.target.appendChild(draggable);
-
-};
-
-dragEnter()
-dragOver()
-dragLeave()
-drop()
-
