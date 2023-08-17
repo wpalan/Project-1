@@ -1,27 +1,50 @@
-let imagenDrop = document.querySelector("#imagen1");
-let cajadDrop = document.querySelector("#caja1");
+const imagen=document.querySelectorAll('.caja');
 
-imagenDrop.addEventListener('dragstart',inicioTraslado);
-imagenDrop.addEventListener('dragend',finalTraslado);
+imagen.addEventListener('dragstart', dragStart);
 
-function inicioTraslado(evento) {
-    evento.dataTransfer.setData ('Text',imagenDrop);
+function dragStart() {
+    e.dataTransfer.setData('Text', e.target.id);
+    e.target.classList.add('hide');
 };
 
-function finalTraslado(evento) {
-    let imagen=evento.target;
-    imagen.style.visibility="hidden";
+const cajas = document.querySelectorAll('.cajagris');
+
+cajas.forEach(caja =>{
+    caja.addEventListener('dragenter', dragEnter);
+    caja.addEventListener('dragover', dragOver);
+    caja.addEventListener('dragleave', dragLeave);
+    caja.addEventListener('drop', drop);
+});
+
+function dragEnter(e) {
+    e.preventDefault();
+    e.tartget.classList.add('drag-over');
+    
 };
 
-destino.addEventListener('drop',soltarElemento);
-
-function soltarElemento(evento){ 
-    let dataimagenDrop = evento.dataTransfer.getData('Text');
-    destino.innerHTML=`<img id="#imagen1" src="${dataimagenDrop}"/>`
+function dragOver(e){
+    e.preventDefault();
+    e.target.classList.add('drag-over');
 };
 
-function prevenirDefault(evento) {
-    evento.preventDefault()
+function dragLeave(e) {
+    e.target.classList.remove('drag-over');
 };
 
-iniciar()
+function drop(e) {
+    e.target.classList.remove('drag-over');
+
+
+    const id = e.dataTransfer.getData('Text');
+    
+    const draggable = document.querySelectorAll('.caja');
+
+    e.target.appendChild(draggable);
+
+};
+
+dragEnter()
+dragOver()
+dragLeave()
+drop()
+

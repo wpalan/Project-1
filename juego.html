@@ -11,11 +11,11 @@
 <body>
     <nav>
         <a href="./index.html">
-            <svg width="200" height="80">
-                <rect x="45" y="5" width="60" height="35" rx="5" fill="#F0E9D2"></rect>
-                <rect x="50" y="10" width="50" height="25" rx="5" fill="#495579"></rect>
-                <polygon points="55 45 ,95 45,115 62,30 62" fill="#F0E9D2"></polygon>
-                <polygon points="57 48 ,92 48,104 58,43 58" fill="#495579"></polygon>
+           <svg width="200" height="80">
+                <rect x="45" y="5" width="60" height="35" rx="5" id="a1" fill="#F0E9D2"></rect>
+                <rect x="50" y="10" width="50" height="25" rx="5" id="a2"  fill="#495579"></rect>
+                <polygon points="55 45 ,95 45,115 62,30 62" id="b1" fill="#F0E9D2"></polygon>
+                <polygon points="57 48 ,92 48,104 58,43 58" id="b2" fill="#495579"></polygon>
             </svg>
         </a>
         <div class="bnv">
@@ -39,18 +39,18 @@
     
 
     <div class="cajavacia">
-    <div class="cajagris" id="caja1"><p>Arrastre y suelte la imágen aquí</p></div>
-    <div class="cajagris" id="caja2"><p>Arrastre y suelte la imágen aquí</p></div>
-    <div class="cajagris" id="caja3"><p>Arrastre y suelte la imágen aquí</p></div>
+        <div class="cajagris" id="caja1"><p>Arrastre y suelte la imágen aquí</p></div>
+        <div class="cajagris" id="caja2"><p>Arrastre y suelte la imágen aquí</p></div>
+        <div class="cajagris" id="caja3"><p>Arrastre y suelte la imágen aquí</p></div>
     </div>
 
     
         <div class="cajafotos">
-            <div class="caja" id="imagen1"><img src="./imagenes/Rompe3.png"class="imgjuego"></div>
-            <div class="caja" id="imagen2"><img src="./imagenes/Rompe2.png"class="imgjuego"></div>
-            <div class="caja" id="imagen3"><img src="./imagenes/rompe1.png"class="imgjuego"></div>
+            <div class="caja" ><img id="imagen3" draggable="true" src="./imagenes/Rompe3.png"class="imgjuego"></div>
+            <div class="caja" ><img id="imagen2" draggable="true" src="./imagenes/Rompe2.png"class="imgjuego"></div>
+            <div class="caja" ><img id="imagen1" draggable="true" src="./imagenes/rompe1.png"class="imgjuego"></div>
         </div>
-    
+        
 </section>
 
 <script href="scriptjuego.js"></script>
