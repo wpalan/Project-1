@@ -18,7 +18,7 @@ p {
 .card {
     display: inline-flex;
     background-color: #E6DDC4;
-    padding-bottom: 5px;
+    padding-bottom: 50px;
     box-shadow: 2px 2px 2px 1px rgb(103, 137, 131);
     justify-content: center;
     align-items: center;
@@ -30,4 +30,7 @@ p {
     display: flex;
     text-align: center;
     font-size: small;
+    width: 50%;
+    margin-bottom: 80px;
+    font-family: 'Montserrat', sans-serif;
 }

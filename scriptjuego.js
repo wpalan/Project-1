@@ -45,3 +45,8 @@ images.forEach((img) => {
         console.log(e.target.id)
     });
 });
+
+
+function reiniciar(){
+    window.location.reload()
+}

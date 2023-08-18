@@ -12,14 +12,14 @@
 
 .titulos {
     color:  #678983;
-    font-family: 'VT323', monospace;
+    font-family: 'Montserrat', sans-serif;
     font-size: xx-large;
     margin: 45px;
 }
 
 .infotxt {
     color: #E6DDC4;
-    font-size: small;
+    font-size: smaller;
     margin: 45px;
 }
 
